@@ -16,16 +16,12 @@ public class Quick{
       }
     }
 
-    if (data[start] > value) {
-      data[pivot] = data[start - 1];
-      data[start - 1] = value;
-      pivot = start - 1;
+    if (data[start] < value) {
+      swap(ary, start, 0)
     } else {
-      data[pivot] = data[start];
-      data[start] = value;
-      pivot = start;
+      swap(ary, start - 1, 0);
     }
-
+    return pivot;
   }
 
   public void swap(int[] ary, int x, int y){
