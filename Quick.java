@@ -41,7 +41,14 @@ public class Quick{
     return data[x];
   }
 
-
+  public void quickSort(int[] ary, int lo, int hi){
+    if( lo >= hi){
+      return;
+    }
+    pivot = partition(ary, low, hi);
+    quickSort(ary, pivot+1, hi);
+    quickSort(ary, low, pivot-1);
+  }
 
   private void swap(int[] data, int x, int y){
     int hold = int[x];
