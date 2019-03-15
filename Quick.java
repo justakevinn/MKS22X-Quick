@@ -14,21 +14,16 @@ public class Quick{
         int upper = end;
         int lower = start + 1;
         int value = data[pivot];
-        data[pivot] = data[start];
-        data[start] = value;
+        swap(data, pivot, start);
         while(upper >= lower){
             if(data[lower] > data[start]){
-                value = data[upper];
-                data[upper] = data[lower];
-                data[lower] = value;
+                swap(data, upper, lower);
                 upper--;
             }else{
                 lower++;
             }
         }
-        value = data[upper];
-        data[upper] = data[start];
-        data[start] = value;
+        swap(data, start, upper);
         return upper;
     }
 
